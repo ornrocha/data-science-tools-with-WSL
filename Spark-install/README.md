@@ -35,11 +35,10 @@ Or just do:
 1. Open Ubuntu terminal.
 2. Execute the following commands in terminal:
      
-     ```
-     wget https://github.com/ornrocha/data-science-tools-with-WSL/raw/master/Spark-install/scripts/install_spark_env_wsl.sh
-     chmod +x install_spark_env_wsl.sh
-     ./install_spark_env_wsl.sh
-     ```
+     - `wget https://github.com/ornrocha/data-science-tools-with-WSL/raw/master/Spark-install/scripts/install_spark_env_wsl.sh`
+     - `chmod +x install_spark_env_wsl.sh`
+     - `./install_spark_env_wsl.sh`
+
 
 3. Follow the instructions that will be asked.
     
@@ -89,7 +88,7 @@ Or just do:
 
 4. During the automatic installation of the Spark environment, a script **init_jupyter_spark.sh** to initialize jupyter is created. You can edit this script by running the following command:
 
-    `nano init_jupyter_spark.sh`
+    - `nano init_jupyter_spark.sh`
     
     * After editing the script, if necessary, press **CTRL-O** to save your changes and/or **CTRL-X** to exit.
 
@@ -219,11 +218,10 @@ Or just do:
     - ```
       cat <<< "source $HOME/miniconda3/bin/activate $CONDAENVNAME
       jupyter notebook --no-browser --ip='localhost' --notebook-dir='/mnt/c/jupyter_notebooks' --port=8000" > init_jupyter_spark.sh
-     ```
+     
+      ```
 
     - `chmod +x $HOME/init_jupyter_spark.sh`
-
-
 
 ## Initialize jupyter with Apache Spark environment 
 
