@@ -36,7 +36,7 @@ Or just do:
 2. Execute the following commands in terminal:
      
      ```
-     wget colocar_url_script
+     wget https://github.com/ornrocha/data-science-tools-with-WSL/raw/master/Spark-install/scripts/install_spark_env_wsl.sh
      chmod +x install_spark_env_wsl.sh
      ./install_spark_env_wsl.sh
      ```
