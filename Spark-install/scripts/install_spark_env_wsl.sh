@@ -1,4 +1,6 @@
 #!/bin/bash
+#author		 :Orlando Rocha
+#email       :ornrocha@gmail.com
 
 SOURCES="$HOME/sources"
 SPARKVERSION="spark-2.4.3"
