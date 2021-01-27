@@ -37,7 +37,31 @@ Or just do:
      
      - `wget https://github.com/ornrocha/data-science-tools-with-WSL/raw/master/Spark-install/scripts/install_spark_env_wsl.sh`
      - `chmod +x install_spark_env_wsl.sh`
-     - `./install_spark_env_wsl.sh`
+     - `./install_spark_env_wsl.sh -h`
+
+ Choose your options: 
+
+     
+     usage:  [Note:  { } represents the required parameter (all options are optional)]
+	         [--conda-env-name {name} conda environment name, default=sparkenv]  
+    	 [--spark-version {Spark version} --> (2.4.5 | 2.4.6 | 2.4.7 | 3.0.0) default=3.0.1 ]
+             [--hadoop-version {Hadoop version} --> (2.7 | 3.2) default=2.7]
+             [--python-version {Python version} --> (3.7 | 3.8 | 3.9) default=3.9 ]
+	         [--create-jupyter-init-script --> create a shell script to initialize jupyter)]
+    	 [--jupyter-port {int} jupyter web port, necessary only if initialization script is created (default port = 8000)]  
+	         [--jupyter-notebooks-path {path} path where future notebooks will be created, necessary only if initialization script is created]  
+             [-h (help)]
+
+
+     Example:
+
+      > ./install_spark_env_wsl.sh --spark-version 2.4.5 --conda-env-name myenv --create-jupyter-init-script --jupyter-port 8001
+
+     
+
+     
+
+
 
 
 3. Follow the instructions that will be asked.
@@ -46,59 +70,65 @@ Or just do:
 
     ![figure 1](images/001.png)
 
-    2. Write **yes** and Press **ENTER** to accept license of miniconda.
+    1. Write **yes** and Press **ENTER** to accept license of miniconda.
 
     ![figure 2](images/002.png)
 
-    3. Press **ENTER** to accept the default loaction of miniconda or specify a different location [Note: orocha is my home, it will be shown your username].
+    1. Press **ENTER** to accept the default loaction of miniconda or specify a different location [Note: orocha is my home, it will be shown your username].
 
     ![figure 3](images/003.png)
 
-    4. Press **ENTER** to accept the default [no] option.
+    1. Press **ENTER** to accept the default [no] option.
 
     ![figure 4](images/004.png)
 
-    5. Choose [**y**] and press **ENTER** to create your conda environment.
+    1. Choose [**y**] and press **ENTER** to create your conda environment.
 
     ![figure 5](images/005.png)
 
-    6. Choose [*y*] and press **ENTER** to install the remaining packages.
+    1. Choose [*y*] and press **ENTER** to install the remaining packages.
 
     ![figure 6](images/006.png)
 
-    7. The required [kernel PixieDust](https://pixiedust.github.io/pixiedust/index.html) it will be installed in the next step, choose *n* to change the default location or *y* otherwise.  
+<!---
+    1. The required [kernel PixieDust](https://pixiedust.github.io/pixiedust/index.html) it will be installed in the next step, choose *n* to change the default location or *y* otherwise.  
 
     ![figure 7](images/007.png)
 
-    8. Choose *y* and and press **ENTER**
+    1. Choose *y* and and press **ENTER**
 
     ![figure 8](images/008.png)
 
-    9. Choose *y* and and press **ENTER**
+    1. Choose *y* and and press **ENTER**
 
     ![figure 9](images/009.png)
 
-    10. Choose *n* if you want to change the kernel name [optional].
+    1.  Choose *n* if you want to change the kernel name [optional].
         
     ![figure 10](images/010.png)
 
-    11. Give the kernel a name if you chose to rename it (previous step).
+    1.  Give the kernel a name if you chose to rename it (previous step).
         
     ![figure 11](images/011.png)
+-->
 
-4. During the automatic installation of the Spark environment, a script **init_jupyter_spark.sh** to initialize jupyter is created. You can edit this script by running the following command:
+4. During the automatic installation of the Spark environment, a script **init_jupyter_spark.sh** to initialize jupyter can be created, if required (choose option: --create-jupyter-init-script). You can edit this script by running the following command:
 
     - `nano init_jupyter_spark.sh`
     
     * After editing the script, if necessary, press **CTRL-O** to save your changes and/or **CTRL-X** to exit.
 
-5. Execute this script to initialize your jupyter notebook with the Spark environments.
+5. Start jupyter notebook by running the following command in the shell:
 
-   run the command: `./init_jupyter_spark.sh`
+      `start_jupyter`
+   
+    Or:
+
+      `./init_jupyter_spark.sh`
 
    ![figure 13](images/013.png)
 
-5. Copy one of the jupyter urls and paste on your browser. 
+6. Copy one of the jupyter urls and paste on your browser. 
 
    ![figure 14](images/014.png)
 
